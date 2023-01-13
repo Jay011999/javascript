@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number guessing game!</title>
+    <style>
+        
+div{
+    padding: 0.5em;
+    margin: 0.5em;
+    display: flex ;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+p{
+    padding: 0.5em;
+    margin: 0.5em;
+    font-family:'Courier New', Courier, monospace;
+}
+button{
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+      <div>
+        <h1>Random number guessing game!!!</h1>
+        <p>Only enter values between 1 and 5.</p>
+        <input type="text" id="input1">
+        <button id="submitbtn">Submit</button>
+        <p id="wish"></p>
+      </div>
+    <script>
+        var useranswer = 0;
+        document.getElementById('submitbtn').onclick=function(){
+        useranswer = document.getElementById('input1').value;
+        var computeranswer=Math.floor(Math.random()*5)+1;
+        console.log(computeranswer);
+        if(useranswer==computeranswer){
+            document.getElementById('wish').innerHTML="Congratulations Its correct!!!!!!";
+            document.getElementById('input1').value="";
+        }
+        else{
+            document.getElementById('wish').innerHTML="Better luck next time!!";
+            document.getElementById('input1').value="";
+        }
+     };
+    </script>
+</body>
+</html>
